@@ -5,7 +5,7 @@ from game_data import GameData
 from kivy.uix.textinput import TextInput
 import threading
 
-#returns data per level
+# Returns data per level
 class LevelData():
     def __init__(self):
         self.level_data = GameData()
@@ -16,8 +16,8 @@ class LevelData():
                 'answers': data.answers, 
                 'data_id': data.data_id
                 }
-
-#declare Menu Screen
+                
+# Basic class Menu Screen Layout
 class MenuScreen(Screen):
     sound = SoundLoader.load("sounds/click.ogg")
     background = SoundLoader.load("sounds/background.ogg")
@@ -28,7 +28,7 @@ class MenuScreen(Screen):
     def click_sound(self):        
         self.sound.play()
     
-#declare Level Screen
+# Basic class Level Screen Layout
 class LevelScreen(Screen):
     game_data = GameData()
     #get user current level
@@ -100,13 +100,14 @@ class LevelScreen(Screen):
     def wrong_sound(self):
         self.sounds['wrong'].play()
 
-#declare Update Screen
+# Basic class Update Screen Layout
 class UpdateScreen(Screen):
     sound = SoundLoader.load("sounds/click.ogg")
 
     def click_sound(self):
         self.sound.play()
 
+# Main App Class
 class Got6WordsApp(App):
     layout = ScreenManager(transition=FadeTransition())
     def build(self):
@@ -115,5 +116,6 @@ class Got6WordsApp(App):
         self.layout.add_widget(UpdateScreen(name='update_screen'))
         return self.layout
     
+# Main Program
 if __name__ == '__main__':
     Got6WordsApp().run()
