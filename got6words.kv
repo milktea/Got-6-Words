@@ -1,0 +1,100 @@
+
+#Rule for all Labels
+<Label>:
+    font_name: 'ArchitectsDaughter.ttf'
+    font_size: '18sp'
+
+#Button
+<Button>:
+    background_normal: './images/normal.png'
+    background_down: './images/down.png'
+
+<MenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint_y: 0.5
+            text: 'Got 6 Words'
+            font_size: '28sp'
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,1
+                Rectangle:
+                    source: './images/logo.png'
+                    size: self.size[0]/2, self.size[1]
+                    pos: self.center_x/2, self.pos[1]
+
+        BoxLayout:
+            size_hint: 0.6, 1
+            pos_hint: {'center_x': 0.5}
+            padding: 25
+            spacing: 25
+            orientation: 'vertical'
+            Button:
+                id: sample
+                text: 'Start'
+                on_release: 
+                    root.click_sound()
+                    root.background.volume = 0.03
+                    root.manager.current = 'level_screen'
+            Button:
+                text: 'Quit'
+                on_release:
+                    exit()
+
+
+<LevelScreen>:
+    on_enter: self.set_next_level()
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint: 1, 0.15
+            Button:                
+                id: home
+                text: 'Home'
+                on_release:
+                    root.manager.current = 'menu_screen'
+            Label:
+                id: level
+
+            Label:
+                id: answer
+                text: ''        
+        Image:
+            id: image
+            source: ''
+        BoxLayout:
+            size_hint: 1, .1
+            Label:
+                text: ''
+                id: feedback
+            TextInput:
+                id: user_answer
+            Button:
+                id: buts
+                text: 'Submit'
+                on_press: 
+                    root.buttonClicked(self)
+            Label:
+                text: ''
+                id: user_answers
+<UpdateScreen>:
+    BoxLayout:
+        spacing: 25
+        padding: 25
+        orientation: 'vertical'
+        Label:
+            size_hint: 0.5, 0.15
+            pos_hint: {'center_x': 0.45}
+            text: 'Result'
+        
+        Label:
+            id: label
+            text: 'Update'
+        Button:
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.45}
+            text: 'back'
+            on_release:                
+                root.click_sound() 
+                root.manager.current = 'menu_screen'

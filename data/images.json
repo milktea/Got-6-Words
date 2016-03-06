@@ -1,0 +1,21 @@
+[
+{"image": "./images/1.jpg", 
+ "answers": ["0","00", "000"],
+ "data_id": 0},
+
+ {"image": "./images/2.jpg", 
+ "answers": ["1","11", "111"],
+ "data_id": 1},
+
+ {"image": "./images/3.jpg", 
+ "answers": ["2","22", "222"],
+ "data_id": 2},
+
+ {"image": "./images/4.png", 
+ "answers": ["3","33", "333"],
+ "data_id": 3},
+
+ {"image": "./images/5.jpg", 
+ "answers": ["4","44", "444"],
+ "data_id": 4}
+ ]
