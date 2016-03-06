@@ -10,7 +10,7 @@ class LevelData():
     def __init__(self):
         self.level_data = GameData()
 
-    def get_task(self):
+    def get_data(self):
         data = self.level_data.get_level_data()
         return {'image': data.image, 
                 'answers': data.answers, 
@@ -56,9 +56,7 @@ class LevelScreen(Screen):
                     
                     if len(self.user_answers) == 3:
                         self.ids.feedback.text = 'Got 6!'
-                        
-                        self.update_data(self.user_level,self.task_values['data_id'])
-                        
+                        self.update_data(self.user_level,self.level_data['data_id'])
                         
                         if len(self.game_data.level_data) <= self.user_level:
                             print len(self.game_data.level_data), self.user_level
@@ -76,11 +74,12 @@ class LevelScreen(Screen):
         self.ids.user_answer.text = ''
 
     def get_level_data(self):
-        self.Tasks = LevelData()
-        self.task_values = self.Tasks.get_task()
-        self.ids.image.source = self.task_values['image']
-        self.answers = self.task_values['answers']
+        self.Data = LevelData()
+        self.level_data = self.Data.get_data()
+        self.ids.image.source = self.level_data['image']
+        self.answers = self.level_data['answers']
 
+    # Stores data (Json files)
     def update_data(self,user_level,data_id):
         game_data = self.game_data
         game_data.store_data(user_level, 'user.json')
