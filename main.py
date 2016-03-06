@@ -5,9 +5,6 @@ from game_data import GameData
 from kivy.uix.textinput import TextInput
 import threading
 
-
-
-
 #returns data per level
 class LevelData():
     def __init__(self):
