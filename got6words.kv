@@ -1,20 +1,31 @@
 
+
 #Rule for all Labels
 <Label>:
     font_name: 'ArchitectsDaughter.ttf'
-    font_size: '18sp'
+    font_size: '12sp'
+    color: 0,0,0,1
 
 #Button
 <Button>:
     background_normal: './images/normal.png'
     background_down: './images/down.png'
+    color: 1, 1, 1, 1
 
 <MenuScreen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
     BoxLayout:
         orientation: 'vertical'
         Label:
             size_hint_y: 0.5
-            text: 'Got 6 Words'
+            text: 'Got 6!'
             font_size: '28sp'
             canvas.before:
                 Color:
@@ -31,7 +42,7 @@
             spacing: 25
             orientation: 'vertical'
             Button:
-                id: sample
+                id: start
                 text: 'Start'
                 on_release: 
                     root.click_sound()
@@ -42,24 +53,27 @@
                 on_release:
                     exit()
 
-
 <LevelScreen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
     on_enter: self.set_next_level()
     BoxLayout:
         orientation: 'vertical'
+        padding: 25
+        spacing: 25
         BoxLayout:
-            size_hint: 1, 0.15
+            size_hint: 1., 0.10
             Button:                
                 id: home
                 text: 'Home'
                 on_release:
                     root.manager.current = 'menu_screen'
             Label:
-                id: level
-
-            Label:
-                id: answer
-                text: ''        
+                id: level  
         Image:
             id: image
             source: ''
@@ -70,6 +84,8 @@
                 id: feedback
             TextInput:
                 id: user_answer
+                write_tab: False
+                multiline: False
             Button:
                 id: buts
                 text: 'Submit'
@@ -79,6 +95,13 @@
                 text: ''
                 id: user_answers
 <UpdateScreen>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
     BoxLayout:
         spacing: 25
         padding: 25

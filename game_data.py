@@ -1,9 +1,8 @@
 from kivy.network.urlrequest import UrlRequest
-from kivy.clock import Clock
 import json
 import random
 import urllib2
-import inspect, os
+import os
 
 class LevelData():
 	def __init__(self, image, answers, data_id):
@@ -25,30 +24,29 @@ class GameData():
 			#all data minus level completed then random
 			random_no = random.sample(set(data_ids) - set(levels_completed),1)[0]
 			return self.level_data[random_no]
+		#no more data
 		except ValueError:
-			#error here
 			return ''
 	
 	#gets all game data from images json file
 	def get_game_data(self):		
-		with open(os.getcwd()+'/data/images.json') as json_file:
+		with open(os.getcwd()+'/data/images-test.json') as json_file:
 			json_data = json.load(json_file)
 			for datum in json_data:
 				self.level_data.append(LevelData(datum["image"], 
-													datum["answers"],
-													datum["data_id"]))
+											datum["answers"],
+											datum["data_id"]))
 
 	#saves data (json files)
 	def store_data(self, id_data, filename):
 		if filename == 'levels_completed.json':
-			data = self.read_data('levels_completed.json')
+			data = self.read_data(filename)
 			data.append(id_data)
 		else:
 			data = id_data
-			
 		with open(os.getcwd()+'/data/'+filename, 'w') as outfile:
 			json.dump(data, outfile)
-		print(os.getcwd())
+		#print(os.getcwd())
 
 	#reads data (json files) 
 	def read_data(self, filename):		
@@ -65,8 +63,7 @@ class GameData():
 
 		with open(os.getcwd()+'/data/images.json', 'w') as outfile:
 			json.dump(data, outfile)
-
-		print(os.getcwd())
+		#print(os.getcwd())
 
 
 
