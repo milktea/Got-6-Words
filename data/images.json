@@ -1,21 +1,41 @@
 [
-{"image": "./images/1.jpg", 
- "answers": ["0","00", "000"],
- "data_id": 0},
-
- {"image": "./images/2.jpg", 
- "answers": ["1","11", "111"],
+{"image": "./images/1.png", 
+ "answers": ["book","words", "story", "pages", "read", "novel"],
  "data_id": 1},
 
- {"image": "./images/3.jpg", 
- "answers": ["2","22", "222"],
+ {"image": "./images/2.png", 
+ "answers": ["clouds", "1", "2", "3", "4", "5"],
  "data_id": 2},
 
- {"image": "./images/4.png", 
- "answers": ["3","33", "333"],
+ {"image": "./images/3.png", 
+ "answers": ["boots","chills", "mittens", "snow", "frost", "ice"],
  "data_id": 3},
 
- {"image": "./images/5.jpg", 
- "answers": ["4","44", "444"],
- "data_id": 4}
+ {"image": "./images/4.png", 
+ "answers": ["music","party", "hungry", "red", "cheesy", "yummy"],
+ "data_id": 4},
+
+ {"image": "./images/5.png", 
+ "answers": ["chill","sled", "frost", "cold", "toboggan", "ice"],
+ "data_id": 5},
+
+ {"image": "./images/6.png", 
+ "answers": ["farm","dig", "seed", "garden", "bloom", "vine"],
+ "data_id": 6},
+
+ {"image": "./images/7.png", 
+ "answers": ["straw", "mirror", "tiles", "couch", "cat", "cord"],
+ "data_id": 7},
+
+ {"image": "./images/8.png", 
+ "answers": ["tree","fish", "boy", "hot", "wave", "nice"],
+ "data_id": 8},
+
+ {"image": "./images/9.png", 
+ "answers": ["iowa","cow", "guitar", "orange", "wow", "laugh"],
+ "data_id": 9},
+
+ {"image": "./images/10.png", 
+ "answers": ["cut","man", "snow", "cool", "tell", "see"],
+ "data_id": 10}
  ]

@@ -1,0 +1,41 @@
+[
+{"image": "./images/1.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 1},
+
+ {"image": "./images/2.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 2},
+
+ {"image": "./images/3.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 3},
+
+ {"image": "./images/4.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 4},
+
+ {"image": "./images/5.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 5},
+
+ {"image": "./images/6.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 6},
+
+ {"image": "./images/7.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 7},
+
+ {"image": "./images/8.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 8},
+
+ {"image": "./images/9.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 9},
+
+ {"image": "./images/10.png", 
+ "answers": ["1","2", "3", "4", "5", "6"],
+ "data_id": 10}
+ ]
